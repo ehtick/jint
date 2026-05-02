@@ -87,15 +87,15 @@ internal sealed partial class DateConstructor : Constructor
         return finalDate.TimeClip().ToJsValue();
     }
 
-    [JsFunction(Length = 0)]
-    private JsValue Now(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue Now(JsValue thisObject)
     {
         return (long) (_timeSystem.GetUtcNow().DateTime - Epoch).TotalMilliseconds;
     }
 
     protected internal override JsValue Call(JsValue thisObject, JsCallArguments arguments)
     {
-        return PrototypeObject.ToString(Construct(Arguments.Empty, thisObject), Arguments.Empty);
+        return PrototypeObject.ToString(Construct(Arguments.Empty, thisObject));
     }
 
     /// <summary>

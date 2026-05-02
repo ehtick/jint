@@ -73,8 +73,8 @@ internal sealed partial class StringPrototype : StringInstance
         return _realm.Intrinsics.StringIteratorPrototype.Construct(str);
     }
 
-    [JsFunction(Length = 0, Name = "toString")]
-    private JsValue ToStringString(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction(Name = "toString")]
+    private JsValue ToStringString(JsValue thisObject)
     {
         if (thisObject.IsString())
         {
@@ -162,9 +162,9 @@ internal sealed partial class StringPrototype : StringInstance
     /// https://tc39.es/ecma262/#sec-string.prototype.trim
     /// </summary>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    [JsFunction(Length = 0)]
+    [JsFunction]
     [RequireObjectCoercible]
-    private static JsValue Trim(JsValue thisObject, JsCallArguments arguments)
+    private static JsValue Trim(JsValue thisObject)
     {
         var s = TypeConverter.ToJsString(thisObject);
         if (s.Length == 0 || (!IsWhiteSpaceEx(s[0]) && !IsWhiteSpaceEx(s[s.Length - 1])))
@@ -177,9 +177,9 @@ internal sealed partial class StringPrototype : StringInstance
     /// <summary>
     /// https://tc39.es/ecma262/#sec-string.prototype.trimstart
     /// </summary>
-    [JsFunction(Length = 0)]
+    [JsFunction]
     [RequireObjectCoercible]
-    private static JsValue TrimStart(JsValue thisObject, JsCallArguments arguments)
+    private static JsValue TrimStart(JsValue thisObject)
     {
         var s = TypeConverter.ToJsString(thisObject);
         if (s.Length == 0 || !IsWhiteSpaceEx(s[0]))
@@ -192,9 +192,9 @@ internal sealed partial class StringPrototype : StringInstance
     /// <summary>
     /// https://tc39.es/ecma262/#sec-string.prototype.trimend
     /// </summary>
-    [JsFunction(Length = 0)]
+    [JsFunction]
     [RequireObjectCoercible]
-    private static JsValue TrimEnd(JsValue thisObject, JsCallArguments arguments)
+    private static JsValue TrimEnd(JsValue thisObject)
     {
         var s = TypeConverter.ToJsString(thisObject);
         if (s.Length == 0 || !IsWhiteSpaceEx(s[s.Length - 1]))
@@ -204,7 +204,7 @@ internal sealed partial class StringPrototype : StringInstance
         return TrimEndEx(s.ToString());
     }
 
-    [JsFunction(Length = 0)]
+    [JsFunction]
     [RequireObjectCoercible]
     private JsValue ToLocaleUpperCase(JsValue thisObject, JsCallArguments arguments)
     {
@@ -234,9 +234,9 @@ internal sealed partial class StringPrototype : StringInstance
         return new JsString(ToUpperCaseWithSpecialCasing(s, culture));
     }
 
-    [JsFunction(Length = 0)]
+    [JsFunction]
     [RequireObjectCoercible]
-    private static JsValue ToUpperCase(JsValue thisObject, JsCallArguments arguments)
+    private static JsValue ToUpperCase(JsValue thisObject)
     {
         var s = TypeConverter.ToString(thisObject);
         return new JsString(ToUpperCaseWithSpecialCasing(s, CultureInfo.InvariantCulture));
@@ -414,7 +414,7 @@ internal sealed partial class StringPrototype : StringInstance
         };
     }
 
-    [JsFunction(Length = 0)]
+    [JsFunction]
     [RequireObjectCoercible]
     private JsValue ToLocaleLowerCase(JsValue thisObject, JsCallArguments arguments)
     {
@@ -432,9 +432,9 @@ internal sealed partial class StringPrototype : StringInstance
         return ToLowerCaseWithSpecialCasing(s, culture);
     }
 
-    [JsFunction(Length = 0)]
+    [JsFunction]
     [RequireObjectCoercible]
-    private static JsValue ToLowerCase(JsValue thisObject, JsCallArguments arguments)
+    private static JsValue ToLowerCase(JsValue thisObject)
     {
         var s = TypeConverter.ToString(thisObject);
         return ToLowerCaseWithSpecialCasing(s, CultureInfo.InvariantCulture);
@@ -991,19 +991,19 @@ internal sealed partial class StringPrototype : StringInstance
     private JsValue Anchor(JsValue thisObject, JsCallArguments arguments)
         => CreateHTML(_engine, thisObject, "a", "name", arguments.At(0));
 
-    [JsFunction(Length = 0)]
+    [JsFunction]
     private JsValue Big(JsValue thisObject, JsCallArguments arguments)
         => CreateHTML(_engine, thisObject, "big", "", Undefined);
 
-    [JsFunction(Length = 0)]
+    [JsFunction]
     private JsValue Blink(JsValue thisObject, JsCallArguments arguments)
         => CreateHTML(_engine, thisObject, "blink", "", Undefined);
 
-    [JsFunction(Length = 0)]
+    [JsFunction]
     private JsValue Bold(JsValue thisObject, JsCallArguments arguments)
         => CreateHTML(_engine, thisObject, "b", "", Undefined);
 
-    [JsFunction(Length = 0)]
+    [JsFunction]
     private JsValue Fixed(JsValue thisObject, JsCallArguments arguments)
         => CreateHTML(_engine, thisObject, "tt", "", Undefined);
 
@@ -1015,7 +1015,7 @@ internal sealed partial class StringPrototype : StringInstance
     private JsValue FontSize(JsValue thisObject, JsCallArguments arguments)
         => CreateHTML(_engine, thisObject, "font", "size", arguments.At(0));
 
-    [JsFunction(Length = 0)]
+    [JsFunction]
     private JsValue Italics(JsValue thisObject, JsCallArguments arguments)
         => CreateHTML(_engine, thisObject, "i", "", Undefined);
 
@@ -1023,19 +1023,19 @@ internal sealed partial class StringPrototype : StringInstance
     private JsValue Link(JsValue thisObject, JsCallArguments arguments)
         => CreateHTML(_engine, thisObject, "a", "href", arguments.At(0));
 
-    [JsFunction(Length = 0)]
+    [JsFunction]
     private JsValue Small(JsValue thisObject, JsCallArguments arguments)
         => CreateHTML(_engine, thisObject, "small", "", Undefined);
 
-    [JsFunction(Length = 0)]
+    [JsFunction]
     private JsValue Strike(JsValue thisObject, JsCallArguments arguments)
         => CreateHTML(_engine, thisObject, "strike", "", Undefined);
 
-    [JsFunction(Length = 0)]
+    [JsFunction]
     private JsValue Sub(JsValue thisObject, JsCallArguments arguments)
         => CreateHTML(_engine, thisObject, "sub", "", Undefined);
 
-    [JsFunction(Length = 0)]
+    [JsFunction]
     private JsValue Sup(JsValue thisObject, JsCallArguments arguments)
         => CreateHTML(_engine, thisObject, "sup", "", Undefined);
 
@@ -1631,8 +1631,8 @@ internal sealed partial class StringPrototype : StringInstance
         return JsString.Create(s[(int) position]);
     }
 
-    [JsFunction(Length = 0)]
-    private JsValue ValueOf(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue ValueOf(JsValue thisObject)
     {
         if (thisObject is StringInstance si)
         {
@@ -1796,7 +1796,7 @@ internal sealed partial class StringPrototype : StringInstance
         return s.IndexOf(searchStr, (int) pos) > -1;
     }
 
-    [JsFunction(Length = 0)]
+    [JsFunction]
     [RequireObjectCoercible]
     private JsValue Normalize(JsValue thisObject, JsCallArguments arguments)
     {
@@ -1871,18 +1871,18 @@ internal sealed partial class StringPrototype : StringInstance
         return sb.ToString();
     }
 
-    [JsFunction(Length = 0)]
+    [JsFunction]
     [RequireObjectCoercible]
-    private static JsValue IsWellFormed(JsValue thisObject, JsCallArguments arguments)
+    private static JsValue IsWellFormed(JsValue thisObject)
     {
         var s = TypeConverter.ToString(thisObject);
 
         return IsStringWellFormedUnicode(s);
     }
 
-    [JsFunction(Length = 0)]
+    [JsFunction]
     [RequireObjectCoercible]
-    private static JsValue ToWellFormed(JsValue thisObject, JsCallArguments arguments)
+    private static JsValue ToWellFormed(JsValue thisObject)
     {
         var s = TypeConverter.ToString(thisObject);
 

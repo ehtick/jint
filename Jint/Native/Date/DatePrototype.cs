@@ -88,8 +88,8 @@ internal sealed partial class DatePrototype : Prototype
         return TypeConverter.OrdinaryToPrimitive(oi, tryFirst);
     }
 
-    [JsFunction(Length = 0)]
-    private JsValue ValueOf(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue ValueOf(JsValue thisObject)
     {
         return ThisTimeValue(thisObject).ToJsValue();
     }
@@ -111,8 +111,8 @@ internal sealed partial class DatePrototype : Prototype
     /// <summary>
     /// https://tc39.es/ecma262/#sec-date.prototype.tostring
     /// </summary>
-    [JsFunction(Length = 0)]
-    internal JsValue ToString(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    internal JsValue ToString(JsValue thisObject)
     {
         var tv = ThisTimeValue(thisObject);
         return ToDateString(tv);
@@ -121,8 +121,8 @@ internal sealed partial class DatePrototype : Prototype
     /// <summary>
     /// https://tc39.es/ecma262/#sec-date.prototype.todatestring
     /// </summary>
-    [JsFunction(Length = 0)]
-    private JsValue ToDateString(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue ToDateString(JsValue thisObject)
     {
         var tv = ThisTimeValue(thisObject);
 
@@ -152,8 +152,8 @@ internal sealed partial class DatePrototype : Prototype
     /// <summary>
     /// https://tc39.es/ecma262/#sec-date.prototype.totimestring
     /// </summary>
-    [JsFunction(Length = 0)]
-    private JsValue ToTimeString(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue ToTimeString(JsValue thisObject)
     {
         var tv = ThisTimeValue(thisObject);
 
@@ -171,7 +171,7 @@ internal sealed partial class DatePrototype : Prototype
     /// https://tc39.es/ecma262/#sec-date.prototype.tolocalestring
     /// https://tc39.es/ecma402/#sup-date.prototype.tolocalestring
     /// </summary>
-    [JsFunction(Length = 0)]
+    [JsFunction]
     private JsValue ToLocaleString(JsValue thisObject, JsCallArguments arguments)
     {
         var dateInstance = ThisTimeValue(thisObject);
@@ -214,7 +214,7 @@ internal sealed partial class DatePrototype : Prototype
     /// https://tc39.es/ecma262/#sec-date.prototype.tolocaledatestring
     /// https://tc39.es/ecma402/#sup-date.prototype.tolocaledatestring
     /// </summary>
-    [JsFunction(Length = 0)]
+    [JsFunction]
     private JsValue ToLocaleDateString(JsValue thisObject, JsCallArguments arguments)
     {
         var dateInstance = ThisTimeValue(thisObject);
@@ -254,7 +254,7 @@ internal sealed partial class DatePrototype : Prototype
     /// https://tc39.es/ecma262/#sec-date.prototype.tolocaletimestring
     /// https://tc39.es/ecma402/#sup-date.prototype.tolocaletimestring
     /// </summary>
-    [JsFunction(Length = 0)]
+    [JsFunction]
     private JsValue ToLocaleTimeString(JsValue thisObject, JsCallArguments arguments)
     {
         var dateInstance = ThisTimeValue(thisObject);
@@ -356,8 +356,8 @@ internal sealed partial class DatePrototype : Prototype
         }
     }
 
-    [JsFunction(Length = 0)]
-    private JsValue GetTime(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue GetTime(JsValue thisObject)
     {
         var t = ThisTimeValue(thisObject);
         if (t.IsNaN)
@@ -367,8 +367,8 @@ internal sealed partial class DatePrototype : Prototype
         return t.ToJsValue();
     }
 
-    [JsFunction(Length = 0)]
-    private JsValue GetFullYear(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue GetFullYear(JsValue thisObject)
     {
         var t = ThisTimeValue(thisObject);
         if (t.IsNaN)
@@ -378,8 +378,8 @@ internal sealed partial class DatePrototype : Prototype
         return YearFromTime(LocalTime(t));
     }
 
-    [JsFunction(Length = 0)]
-    private JsValue GetYear(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue GetYear(JsValue thisObject)
     {
         var t = ThisTimeValue(thisObject);
         if (t.IsNaN)
@@ -389,8 +389,8 @@ internal sealed partial class DatePrototype : Prototype
         return YearFromTime(LocalTime(t)) - 1900;
     }
 
-    [JsFunction(Length = 0)]
-    private JsValue GetUTCFullYear(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue GetUTCFullYear(JsValue thisObject)
     {
         var t = ThisTimeValue(thisObject);
         if (t.IsNaN)
@@ -400,8 +400,8 @@ internal sealed partial class DatePrototype : Prototype
         return YearFromTime(t);
     }
 
-    [JsFunction(Length = 0)]
-    private JsValue GetMonth(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue GetMonth(JsValue thisObject)
     {
         var t = ThisTimeValue(thisObject);
         if (t.IsNaN)
@@ -414,8 +414,8 @@ internal sealed partial class DatePrototype : Prototype
     /// <summary>
     /// https://tc39.es/ecma262/#sec-date.prototype.getutcmonth
     /// </summary>
-    [JsFunction(Length = 0)]
-    private JsValue GetUTCMonth(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue GetUTCMonth(JsValue thisObject)
     {
         var t = ThisTimeValue(thisObject);
         if (t.IsNaN)
@@ -428,8 +428,8 @@ internal sealed partial class DatePrototype : Prototype
     /// <summary>
     /// https://tc39.es/ecma262/#sec-date.prototype.getdate
     /// </summary>
-    [JsFunction(Length = 0)]
-    private JsValue GetDate(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue GetDate(JsValue thisObject)
     {
         var t = ThisTimeValue(thisObject);
         if (t.IsNaN)
@@ -439,8 +439,8 @@ internal sealed partial class DatePrototype : Prototype
         return DateFromTime(LocalTime(t));
     }
 
-    [JsFunction(Length = 0)]
-    private JsValue GetUTCDate(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue GetUTCDate(JsValue thisObject)
     {
         var t = ThisTimeValue(thisObject);
         if (t.IsNaN)
@@ -450,8 +450,8 @@ internal sealed partial class DatePrototype : Prototype
         return DateFromTime(t);
     }
 
-    [JsFunction(Length = 0)]
-    private JsValue GetDay(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue GetDay(JsValue thisObject)
     {
         var t = ThisTimeValue(thisObject);
         if (t.IsNaN)
@@ -461,8 +461,8 @@ internal sealed partial class DatePrototype : Prototype
         return WeekDay(LocalTime(t));
     }
 
-    [JsFunction(Length = 0)]
-    private JsValue GetUTCDay(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue GetUTCDay(JsValue thisObject)
     {
         var t = ThisTimeValue(thisObject);
         if (t.IsNaN)
@@ -472,8 +472,8 @@ internal sealed partial class DatePrototype : Prototype
         return WeekDay(t);
     }
 
-    [JsFunction(Length = 0)]
-    private JsValue GetHours(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue GetHours(JsValue thisObject)
     {
         var t = ThisTimeValue(thisObject);
         if (t.IsNaN)
@@ -483,8 +483,8 @@ internal sealed partial class DatePrototype : Prototype
         return HourFromTime(LocalTime(t));
     }
 
-    [JsFunction(Length = 0)]
-    private JsValue GetUTCHours(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue GetUTCHours(JsValue thisObject)
     {
         var t = ThisTimeValue(thisObject);
         if (t.IsNaN)
@@ -494,8 +494,8 @@ internal sealed partial class DatePrototype : Prototype
         return HourFromTime(t);
     }
 
-    [JsFunction(Length = 0)]
-    private JsValue GetMinutes(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue GetMinutes(JsValue thisObject)
     {
         var t = ThisTimeValue(thisObject);
         if (t.IsNaN)
@@ -505,8 +505,8 @@ internal sealed partial class DatePrototype : Prototype
         return MinFromTime(LocalTime(t));
     }
 
-    [JsFunction(Length = 0)]
-    private JsValue GetUTCMinutes(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue GetUTCMinutes(JsValue thisObject)
     {
         var t = ThisTimeValue(thisObject);
         if (t.IsNaN)
@@ -516,8 +516,8 @@ internal sealed partial class DatePrototype : Prototype
         return MinFromTime(t);
     }
 
-    [JsFunction(Length = 0)]
-    private JsValue GetSeconds(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue GetSeconds(JsValue thisObject)
     {
         var t = ThisTimeValue(thisObject);
         if (t.IsNaN)
@@ -527,8 +527,8 @@ internal sealed partial class DatePrototype : Prototype
         return SecFromTime(LocalTime(t));
     }
 
-    [JsFunction(Length = 0)]
-    private JsValue GetUTCSeconds(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue GetUTCSeconds(JsValue thisObject)
     {
         var t = ThisTimeValue(thisObject);
         if (t.IsNaN)
@@ -538,8 +538,8 @@ internal sealed partial class DatePrototype : Prototype
         return SecFromTime(t);
     }
 
-    [JsFunction(Length = 0)]
-    private JsValue GetMilliseconds(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue GetMilliseconds(JsValue thisObject)
     {
         var t = ThisTimeValue(thisObject);
         if (t.IsNaN)
@@ -549,8 +549,8 @@ internal sealed partial class DatePrototype : Prototype
         return MsFromTime(LocalTime(t));
     }
 
-    [JsFunction(Length = 0)]
-    private JsValue GetUTCMilliseconds(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue GetUTCMilliseconds(JsValue thisObject)
     {
         var t = ThisTimeValue(thisObject);
         if (t.IsNaN)
@@ -560,8 +560,8 @@ internal sealed partial class DatePrototype : Prototype
         return MsFromTime(t);
     }
 
-    [JsFunction(Length = 0)]
-    private JsValue GetTimezoneOffset(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue GetTimezoneOffset(JsValue thisObject)
     {
         var t = ThisTimeValue(thisObject);
         if (t.IsNaN)
@@ -905,8 +905,8 @@ internal sealed partial class DatePrototype : Prototype
     /// <summary>
     /// https://tc39.es/ecma262/#sec-date.prototype.toutcstring
     /// </summary>
-    [JsFunction(Length = 0, Name = "toUTCString")]
-    private JsValue ToUtcString(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction(Name = "toUTCString")]
+    private JsValue ToUtcString(JsValue thisObject)
     {
         var tv = ThisTimeValue(thisObject);
         if (!IsFinite(tv))
@@ -926,8 +926,8 @@ internal sealed partial class DatePrototype : Prototype
     /// <summary>
     /// https://tc39.es/ecma262/#sec-date.prototype.toisostring
     /// </summary>
-    [JsFunction(Length = 0)]
-    private JsValue ToISOString(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue ToISOString(JsValue thisObject)
     {
         var thisTime = ThisTimeValue(thisObject);
         var t = thisTime;
@@ -980,8 +980,8 @@ internal sealed partial class DatePrototype : Prototype
     /// <summary>
     /// https://tc39.es/proposal-temporal/#sec-date.prototype.totemporalinstant
     /// </summary>
-    [JsFunction(Length = 0)]
-    private JsValue ToTemporalInstant(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsValue ToTemporalInstant(JsValue thisObject)
     {
         // 1. Let dateObject be the this value.
         // 2. Perform ? RequireInternalSlot(dateObject, [[DateValue]]).

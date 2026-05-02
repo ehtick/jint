@@ -108,8 +108,8 @@ internal sealed partial class PromiseConstructor : Constructor
         return PromiseResolve(thisObject, x);
     }
 
-    [JsFunction(Length = 0)]
-    private JsObject WithResolvers(JsValue thisObject, JsCallArguments arguments)
+    [JsFunction]
+    private JsObject WithResolvers(JsValue thisObject)
     {
         var promiseCapability = NewPromiseCapability(_engine, thisObject);
         var obj = OrdinaryObjectCreate(_engine, _engine.Realm.Intrinsics.Object.PrototypeObject);
