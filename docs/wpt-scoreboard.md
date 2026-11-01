@@ -21,11 +21,11 @@ A number here that the census does not have is a suite nobody has vendored yet, 
 
 ## The run
 
-* **Taken** — 2026-10-31 12:43 UTC
+* **Taken** — 2026-11-01 13:38 UTC
 * **Jint** — [`70ba51bff9e0`](https://github.com/sebastienros/jint/commit/70ba51bff9e0030b4cd7ef7ea28980ca92007ef1)
 * **web-platform-tests** — [`6c7127bdd9f2`](https://github.com/web-platform-tests/wpt/commit/6c7127bdd9f2cc6a3668fd9791757843e09d5a9e)
 * **Wall time** — 136 min
-* **Workflow run** — [log and `wptreport.json`](https://github.com/ehtick/jint/actions/runs/41192689966)
+* **Workflow run** — [log and `wptreport.json`](https://github.com/ehtick/jint/actions/runs/41301349002)
 * **Product** — `jint_browser`
 
 **138612 of 146846 subtests pass** (94.4%), over 3316 files.
@@ -43,8 +43,8 @@ A number here that the census does not have is a suite nobody has vendored yet, 
 | html/semantics/scripting-1 | 577 | 435 | 37 | 99 | 6 | 3157 | 1758 | 1151 | 248 | 55.7% |
 | html/webappapis | 353 | 262 | 29 | 43 | 19 | 2656 | 1825 | 731 | 100 | 68.7% |
 | url | 77 | 41 | 28 | 8 | 0 | 8691 | 8288 | 390 | 13 | 95.4% |
-| xhr | 427 | 298 | 115 | 13 | 1 | 1630 | 1136 | 383 | 111 | 69.7% |
-| **total** | 3316 | 2209 | 528 | 310 | 269 | 146846 | 138612 | 7067 | 1167 | 94.4% |
+| xhr | 427 | 298 | 115 | 13 | 1 | 1630 | 1136 | 382 | 112 | 69.7% |
+| **total** | 3316 | 2209 | 528 | 310 | 269 | 146846 | 138612 | 7066 | 1168 | 94.4% |
 
 ## By what the case is
 
@@ -56,9 +56,9 @@ that the totals above cannot be read as a verdict on the engine's DOM.
 | Case | Files | OK | Error | Timeout | Skip | Subtests | Pass | Fail | Other | Pass rate |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | dedicated worker | 346 | 0 | 343 | 0 | 3 | 0 | 0 | 0 | 0 | — |
-| document | 2279 | 1706 | 128 | 287 | 158 | 132599 | 126524 | 4977 | 1098 | 95.4% |
+| document | 2279 | 1706 | 128 | 287 | 158 | 132599 | 126524 | 4976 | 1099 | 95.4% |
 | service worker | 100 | 0 | 0 | 0 | 100 | 0 | 0 | 0 | 0 | — |
-| shared worker | 122 | 97 | 22 | 1 | 2 | 1785 | 1246 | 538 | 1 | 69.8% |
-| window (generated) | 469 | 406 | 35 | 22 | 6 | 12462 | 10842 | 1552 | 68 | 87.0% |
-| **total** | 3316 | 2209 | 528 | 310 | 269 | 146846 | 138612 | 7067 | 1167 | 94.4% |
+| shared worker | 122 | 97 | 22 | 1 | 2 | 1785 | 1249 | 535 | 1 | 70.0% |
+| window (generated) | 469 | 406 | 35 | 22 | 6 | 12462 | 10839 | 1555 | 68 | 87.0% |
+| **total** | 3316 | 2209 | 528 | 310 | 269 | 146846 | 138612 | 7066 | 1168 | 94.4% |
 
