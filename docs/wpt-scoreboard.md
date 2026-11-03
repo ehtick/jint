@@ -21,14 +21,14 @@ A number here that the census does not have is a suite nobody has vendored yet, 
 
 ## The run
 
-* **Taken** — 2026-11-02 14:50 UTC
+* **Taken** — 2026-11-03 14:18 UTC
 * **Jint** — [`70ba51bff9e0`](https://github.com/sebastienros/jint/commit/70ba51bff9e0030b4cd7ef7ea28980ca92007ef1)
 * **web-platform-tests** — [`6c7127bdd9f2`](https://github.com/web-platform-tests/wpt/commit/6c7127bdd9f2cc6a3668fd9791757843e09d5a9e)
-* **Wall time** — 135 min
-* **Workflow run** — [log and `wptreport.json`](https://github.com/ehtick/jint/actions/runs/41445372348)
+* **Wall time** — 136 min
+* **Workflow run** — [log and `wptreport.json`](https://github.com/ehtick/jint/actions/runs/41631869510)
 * **Product** — `jint_browser`
 
-**138613 of 146845 subtests pass** (94.4%), over 3316 files.
+**138622 of 146855 subtests pass** (94.4%), over 3316 files.
 
 ## By suite
 
@@ -40,11 +40,11 @@ A number here that the census does not have is a suite nobody has vendored yet, 
 | fetch/api | 502 | 198 | 184 | 8 | 112 | 2764 | 1985 | 770 | 9 | 71.8% |
 | html/browsers/history | 136 | 93 | 7 | 34 | 2 | 369 | 91 | 214 | 64 | 24.7% |
 | html/dom | 246 | 212 | 8 | 20 | 6 | 60649 | 58964 | 1665 | 20 | 97.2% |
-| html/semantics/scripting-1 | 577 | 435 | 37 | 99 | 6 | 3156 | 1758 | 1151 | 247 | 55.7% |
+| html/semantics/scripting-1 | 577 | 435 | 37 | 99 | 6 | 3157 | 1758 | 1151 | 248 | 55.7% |
 | html/webappapis | 353 | 262 | 29 | 43 | 19 | 2656 | 1825 | 731 | 100 | 68.7% |
 | url | 77 | 41 | 28 | 8 | 0 | 8691 | 8288 | 390 | 13 | 95.4% |
-| xhr | 427 | 298 | 115 | 13 | 1 | 1630 | 1137 | 383 | 110 | 69.8% |
-| **total** | 3316 | 2209 | 528 | 310 | 269 | 146845 | 138613 | 7067 | 1165 | 94.4% |
+| xhr | 427 | 299 | 115 | 12 | 1 | 1639 | 1146 | 382 | 111 | 69.9% |
+| **total** | 3316 | 2210 | 528 | 309 | 269 | 146855 | 138622 | 7066 | 1167 | 94.4% |
 
 ## By what the case is
 
@@ -56,9 +56,9 @@ that the totals above cannot be read as a verdict on the engine's DOM.
 | Case | Files | OK | Error | Timeout | Skip | Subtests | Pass | Fail | Other | Pass rate |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | dedicated worker | 346 | 0 | 343 | 0 | 3 | 0 | 0 | 0 | 0 | — |
-| document | 2279 | 1706 | 128 | 287 | 158 | 132598 | 126525 | 4977 | 1096 | 95.4% |
+| document | 2279 | 1707 | 128 | 286 | 158 | 132608 | 126534 | 4976 | 1098 | 95.4% |
 | service worker | 100 | 0 | 0 | 0 | 100 | 0 | 0 | 0 | 0 | — |
 | shared worker | 122 | 97 | 22 | 1 | 2 | 1785 | 1249 | 535 | 1 | 70.0% |
 | window (generated) | 469 | 406 | 35 | 22 | 6 | 12462 | 10839 | 1555 | 68 | 87.0% |
-| **total** | 3316 | 2209 | 528 | 310 | 269 | 146845 | 138613 | 7067 | 1165 | 94.4% |
+| **total** | 3316 | 2210 | 528 | 309 | 269 | 146855 | 138622 | 7066 | 1167 | 94.4% |
 
